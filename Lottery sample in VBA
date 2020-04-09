@@ -1,0 +1,79 @@
+Public Sub six49CallAll()
+Call LmMostRepeatedPerColumn1
+End Sub
+
+'-------------------------------------------------------------------------------------
+
+Public Sub LmMostRepeatedPerColumn1()
+
+
+'Most repeated number in column 1
+
+
+Dim N0, N1, N2, N3, N4, N5, N6, N7, N8, N9, N10 As Integer
+
+
+
+N0 = N1 = N2 = N3 = N4 = N5 = N6 = N7 = N8 = N9 = N10 = 0
+
+Sheets("Repetitions").Select
+    Range("B2").Select
+    
+
+Dim Var1 As Boolean
+Var1 = True
+
+
+'increasing different counters based on value found in cell
+While (RunProgramFlag = True)
+
+    Select Case (ActiveCell.Value)  
+    Case 0
+        N0 = N0 + 1
+    Case 1
+        N1 = N1 + 1
+    Case 2
+        N2 = N2 + 1
+    Case 3
+        N3 = N3 + 1
+    Case 4
+        N4 = N4 + 1
+    Case 5
+        N5 = N5 + 1
+    Case 6
+        N6 = N6 + 1
+    Case 7
+        N7 = N7 + 1
+    Case 8
+        N8 = N8 + 1
+    Case 9
+        N9 = N9 + 1
+    Case 10
+        N10 = N10 + 1
+
+    Case Else
+        RunProgramFlag = False
+    End Select
+    
+ActiveCell.Offset(1, 0).Activate  'Moves cursor to next row
+Wend                            'End of While loop
+
+
+
+'Printing values
+
+Sheets("Repetitions").Select
+    Range("R10").Value = N0
+    Range("R11").Value = N1
+    Range("R12").Value = N2
+    Range("R13").Value = N3
+    Range("R14").Value = N4
+    Range("R15").Value = N5
+    Range("R16").Value = N6
+    Range("R17").Value = N7
+    Range("R18").Value = N8
+    Range("R19").Value = N9
+    Range("R20").Value = N10
+
+    
+End Sub
